@@ -24,7 +24,7 @@ resource "aws_subnet" "public" {
     { 
        Name = "${var.project}-${var.environment}-public-${local.az_names[count.index]}" 
     },
-    var.var.pubic_subnet_tags
+    var.pubic_subnet_tags
   )
 }
 
@@ -46,7 +46,7 @@ resource "aws_subnet" "private" {
 resource "aws_subnet" "database" {
   count = length(var.private_subnet_cidr)
   vpc_id            = aws_vpc.main.id
-  cidr_block        = var.private_subnet_cidr[count.index]
+  cidr_block        = var.database_subnet_cidr[count.index]
   availability_zone = local.az_names[count.index] # Use a valid AZ for your region
   tags = merge ( local.common_tags,
     { 
