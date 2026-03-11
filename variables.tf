@@ -40,12 +40,12 @@ variable "private_subnet_tags" {
     type = map
 }
 
-variable "private_subnet_cidr" {
+variable "database_subnet_cidr" {
     type = list
     default = ["10.0.21.0/24","10.0.22.0/24"]
 }
 
-variable "private_subnet_tags" {
+variable "database_subnet_tags" {
     default = {}
     type = map
 }
